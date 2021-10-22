@@ -215,7 +215,7 @@ Examples
           variables:
             site_name: den
           query_string: |
-            query ($site_name:String!) {
+            query ($site_name: [String]) {
               sites (name: $site_name) {
                 id
                 name
@@ -231,8 +231,8 @@ Examples
           url: http://nautobot.local
           token: thisIsMyToken
           query: "{{ query_string }}"
-          variables: "{{ variables }}"
-          update_hostvars: "yes"
+          graph_variables: "{{ variables }}"
+          update_hostvars: yes
 
 
 
